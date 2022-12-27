@@ -1,0 +1,10 @@
+{
+    "navBar": {
+        "navLinks": {
+            "home": "home",
+            "about us": "about us",
+            "products": "products",
+            "contact": "contact" 
+        }
+    }
+}
