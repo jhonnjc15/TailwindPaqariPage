@@ -2,9 +2,29 @@
     "navBar": {
         "navLinks": {
             "home": "home",
-            "about us": "about us",
+            "about": "about",
             "products": "products",
             "contact": "contact" 
         }
+    },
+    "footer":{
+        "sections":{
+            "usefulLinks": "usefull links",
+            "contact": "contact"
+        },
+        "footerLinks": {
+            "home": "home",
+            "about": "about",
+            "products": "products",
+            "contact": "contact" 
+        }
+    },
+    "pages":{
+        "notFound":{
+            "message1": "Page Not Found",
+            "message2": "Sorry, the page you are looking for could not be found",
+            "homeButton": "Return Home"
+        }
     }
+
 }

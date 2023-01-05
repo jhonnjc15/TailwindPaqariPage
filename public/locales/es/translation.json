@@ -2,9 +2,28 @@
     "navBar": {
         "navLinks": {
             "home": "inicio",
-            "about us": "nosotros",
+            "about": "nosotros",
             "products": "productos",
             "contact": "contacto" 
+        }
+    },
+    "footer":{
+        "sections":{
+            "usefulLinks": "enlaces útiles",
+            "contact": "contacto"
+        },
+        "footerLinks": {
+            "home": "inicio",
+            "about": "nosotros",
+            "products": "productos",
+            "contact": "contacto" 
+        }
+    },
+    "pages":{
+        "notFound":{
+            "message1": "Página no encontrada",
+            "message2": "Lo sentimos, la página que usted está buscando no se pudo encontrar",
+            "homeButton": "Ir a la página de Inicio"
         }
     }
 }

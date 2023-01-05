@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { navLinks } from '../../constants'
-
+import { NavLink } from 'react-router-dom'
 const LinksNavbar = () => {
 
   const { t } = useTranslation(['translation']);
@@ -11,11 +11,16 @@ const LinksNavbar = () => {
         return (
         <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${index === 0 ? 'ml-6' : 'ml-8'} text-white`}
+            className={`font-normal cursor-pointer text-[16px] ${index === 0 ? 'ml-6' : 'ml-8'} text-black group flex items-center bg-transparent text-xl font-thin tracking-widest`}
         >
-            <a className='capitalize 'href={`#${nav.id}`}>
+            <NavLink 
+              to={`${nav.url}`}
+              className={({ isActive }) =>
+                isActive ? 'relative capitalize border-b-[2.5px] border-paqariGreen pb-1 text-paqariGreen' : "text-black capitalize relative after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-paqariGreen after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 pb-1 hover:text-paqariGreen"
+              }
+            >
               {t('navBar.navLinks.' + nav.title)}
-            </a>
+            </NavLink>
         </li>
         )
     })}

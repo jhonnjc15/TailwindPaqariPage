@@ -3,27 +3,38 @@ import { navLinks } from '../../constants'
 import { NavbarStyles } from './NavbarStyles'
 import { useTranslation } from 'react-i18next'
 import MiniLogoPaqari  from '../../assets/LogoPaqariTransparentePequeño.png'
+import { NavLink } from 'react-router-dom'
 
 interface Props{
   toggle: boolean
+  setToggle: (toggle: boolean) => void
 }
 
-const LinksNavbarResponsive = ({ toggle }:Props) => {
+const LinksNavbarResponsive = ({ toggle, setToggle }:Props) => {
 
   const { t } = useTranslation(['translation']);
 
   return (
-    <div className={` ${toggle ? 'flex transition-all duration-1000 left-0': 'flex transition-all duration-1000 -left-full'} w-full h-[92vh] p-0 bg-slate-600 absolute ${NavbarStyles.PositionLinksContainerSm} my-0 flex-col justify-around`}>
+    <div className={` ${toggle ? 'flex transition-all duration-1000 left-0': 'flex transition-all duration-500 -left-full'} w-full h-[92vh] p-0 bg-slate-600 absolute ${NavbarStyles.PositionLinksContainerSm} my-0 flex-col justify-around`}>
         <ul className='flex flex-col list-none justify-around items-center h-[500px]'>
             {navLinks.map((nav, index) => {
               return (
                   <li
                     key={nav.id}
-                    className={`font-poppins font-normal cursor-pointer text-[16px] text-white`}
+                    className={`font-poppins cursor-pointer text-[16px] text-white group flex items-center bg-transparent text-xl font-thin tracking-widest`}
                   >
-                    <a className='capitalize' href={`#${nav.id}`}>
-                      {t('navBar.navLinks.' + nav.title)}
-                    </a>
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? 'relative capitalize border-b-[2.5px] border-paqariGreen pb-1 text-paqariGreen' : "capitalize relative after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-paqariGreen after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 pb-1 hover:text-paqariGreen"
+                      }
+                      to={`${nav.url}`} 
+                      onClick={() => 
+                        setToggle(!toggle)
+                      }
+                    >
+                        {t('navBar.navLinks.' + nav.title)}
+                    </NavLink>
+
                   </li>
                 )
               })
