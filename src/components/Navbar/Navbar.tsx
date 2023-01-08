@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LinksNavbar from './LinksNavbar'
 import { NavbarStyles } from './NavbarStyles'
 import ChangeLanguage from './ChangeLanguage'
@@ -20,8 +20,12 @@ const Navbar = () => {
       setNavBarScroll(false);
     }
   }
-  window.addEventListener("scroll", changeBackground);
-  console.log(navBarScroll)
+  useEffect(() => {
+    window.addEventListener('scroll', changeBackground, { passive: true });
+    return () => { 
+      window.removeEventListener('scroll', changeBackground)
+    };
+  }, []);
 
   return (
     <div className={`${toggle ? 'transition-color duration-1000 bg-slate-600': `${navBarScroll ? 'transition-color duration-1000 bg-paqariGreen': 'transition-color duration-1000 bg-gradient-to-l from-paqariGreen to-paqariYellow'}`} fixed top-0 w-full ${NavbarStyles.NavbarHeight} ${styles.paddingX} ${styles.flexCenter} ${navBarScroll ? 'transition-color duration-500 sm:bg-paqariGreen': 'transition-color duration-500 sm:bg-gradient-to-l sm:from-paqariGreen sm:to-paqariYellow'}`} >
@@ -32,7 +36,7 @@ const Navbar = () => {
         <img 
           src={LogoPaqari} 
           alt='PaqariLogo' 
-          className='order-2 w-[130px] h-[50px] sm:order-first ml-12'
+          className='order-2 w-[130px] h-[50px] sm:order-first ml-12 sm:ml-0'
         />
         <LinksNavbar />
         <ChangeLanguage

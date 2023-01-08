@@ -12,24 +12,23 @@ interface Props{
 const ChangeLanguage = ({ openLanguage, setOpenLanguage}:Props) => {
 
   const { i18n } = useTranslation(['translation']);
-    const anchorRef = useRef<HTMLButtonElement>(null)
-    const handleClickOutsideDropdown =(e:any)=>{
-        if(openLanguage && !anchorRef.current?.contains(e.target as Node)){
-        setOpenLanguage(false)
-      }
+  const anchorRef = useRef<HTMLButtonElement>(null)
+  const handleClickOutsideDropdown =(e:any)=>{
+      if(openLanguage && !anchorRef.current?.contains(e.target as Node)){
+      setOpenLanguage(false)
     }
-    window.addEventListener("click",handleClickOutsideDropdown)
+  }
+  window.addEventListener("click",handleClickOutsideDropdown)
 
-    const changeToEnglish = () => {
-        i18n.changeLanguage('en')
-        setOpenLanguage(!openLanguage)
-    }
-    
-    const changeToSpanish = () => {
-        i18n.changeLanguage('es')
-        setOpenLanguage(!openLanguage)
-    }
-  console.log(NavbarStyles.SmWidthButton)
+  const changeToEnglish = () => {
+      i18n.changeLanguage('en')
+      setOpenLanguage(!openLanguage)
+  }
+  
+  const changeToSpanish = () => {
+      i18n.changeLanguage('es')
+      setOpenLanguage(!openLanguage)
+  }
   return (
     
     <div  className={`order-last bg-gray-200  rounded ${openLanguage ? 'rounded-br-none' : ''} flex relative ${NavbarStyles.WidthButton} h-[30px] sm:order-last ${NavbarStyles.SmWidthButton}`}>
