@@ -87,15 +87,12 @@ const Form = () => {
     }
 
     //To the alert when leave to page without send form
-    usePrompt( "Hola",JSON.stringify(watch()) !== JSON.stringify(InitialValues) && Object.keys(watch()).length !== 0)
-
-
-
+    usePrompt( "¿Está seguro de salir sin enviar el formulario?",JSON.stringify(watch()) !== JSON.stringify(InitialValues) && Object.keys(watch()).length !== 0)
 
     return (
 
-        <div className="border border-blue-700 w-full flex items-center justify-center my-12 px-0">
-            <div className="w-5/6 md:w-4/6 lg:w-1/2 border border-red-400 bg-white shadow rounded py-12 px-4 xs:px-8 ss:px-8 sm:px-8 md:px-20 lg:px-10 xl:px-20">
+        <div className="w-full flex items-center justify-center my-12 px-0">
+            <div className="w-5/6 md:w-4/6 lg:w-1/2 border bg-white shadow-xl rounded-md py-12 px-4 xs:px-8 ss:px-8 sm:px-8 md:px-20 lg:px-10 xl:px-20">
             <p className="md:text-3xl text-xl font-bold leading-7 text-center text-gray-700">
                 Let’s chat and get a quote!
             </p>
@@ -103,7 +100,7 @@ const Form = () => {
                 onSubmit={
                     handleSubmit(onSubmit)
                 }>
-            <div className="border border-purple-400 items-center mt-12 sm:flex sm:justify-between">
+            <div className="items-center mt-12 sm:flex sm:justify-between">
                 <div className="sm:w-5/6 flex flex-col">
                     <label className="text-base font-semibold leading-none text-gray-800">
                         Full Name

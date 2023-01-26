@@ -14,7 +14,7 @@ const Navbar = () => {
   const [navBarScroll, setNavBarScroll] = useState(false);
 
   const changeBackground = () => {
-    if ( window.scrollY >= 180 ) {
+    if ( window.scrollY >= 120 ) {
       setNavBarScroll(true);
     } else {
       setNavBarScroll(false);
@@ -28,7 +28,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`${toggle ? 'transition-color duration-1000 bg-slate-600': `${navBarScroll ? 'transition-color duration-1000 bg-paqariGreen': 'transition-color duration-1000 bg-gradient-to-l from-paqariGreen to-paqariYellow'}`} fixed top-0 w-full ${NavbarStyles.NavbarHeight} ${styles.paddingX} ${styles.flexCenter} ${navBarScroll ? 'transition-color duration-500 sm:bg-paqariGreen': 'transition-color duration-500 sm:bg-gradient-to-l sm:from-paqariGreen sm:to-paqariYellow'}`} >
+    <div className={`z-10 ${toggle ? 'transition-color duration-1000 bg-slate-600': `${navBarScroll ? 'transition-color duration-1000 bg-paqariGreen': 'transition-color duration-1000 bg-inherit'}`} fixed top-0 w-full ${NavbarStyles.NavbarHeight} ${styles.paddingX} ${styles.flexCenter} ${navBarScroll ? 'transition-color duration-500 sm:bg-paqariGreen': 'transition-color duration-500 sm:bg.inherit'}`} >
 
     {/* // <div className={`${toggle ? 'transition-color duration-1000 bg-slate-600': 'transition-color duration-1000 bg-gradient-to-l from-paqariGreen to-paqariYellow'} fixed top-0 w-full ${NavbarStyles.NavbarHeight} ${styles.paddingX} ${styles.flexCenter} sm:bg-gradient-to-l sm:from-paqariGreen sm:to-paqariYellow`} > */}
 

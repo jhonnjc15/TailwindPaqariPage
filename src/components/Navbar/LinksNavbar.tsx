@@ -16,7 +16,7 @@ const LinksNavbar = () => {
             <NavLink 
               to={`${nav.url}`}
               className={({ isActive }) =>
-                isActive ? 'relative capitalize border-b-[2.5px] border-paqariGreen pb-1 text-paqariGreen' : "text-black capitalize relative after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-paqariGreen after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 pb-1 hover:text-paqariGreen"
+                isActive ? 'relative capitalize border-b-[2.5px] border-paqariGreen pb-1 text-[#3dccd4]' : "text-[#869fb4] font-poppins capitalize relative after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-paqariGreen after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 pb-1 hover:text-[#3dccd4]"
               }
             >
               {t('navBar.navLinks.' + nav.title)}

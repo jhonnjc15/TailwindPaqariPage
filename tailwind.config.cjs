@@ -10,10 +10,34 @@ module.exports = {
         dimWhite: 'rgba(255, 255, 255, 0.7)',
         dimBlue: 'rgba(9, 151, 124, 0.1)',
         paqariGreen: '#217276',
-        paqariYellow: '#f3a415'
+        paqariGreenDark: '#0c2324',
+        paqariYellow: '#f3a415',
+        paqariYellowHover: '#f3b815'
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(rgb(33, 114, 118), rgb(12, 35, 36))',
+        'gradient-radial-contact': 'linear-gradient(180deg, rgba(33,114,118,1) 0%, rgba(12,35,36,1) 100%);'
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif']
+      },
+      keyframes: {
+        comein: {
+          '0%': {
+            transform: 'translatey(100px)',
+            opacity: '0'
+          },
+          '30%': {
+            transform: 'translateX(-50px) scale(0.4)'
+          },
+          '70%': {
+            transform: 'translateX(0px) scale(1.2)'
+          },
+          '100%': {
+            transform: 'translatey(0px) scale(1)',
+            opacity: '1'
+          }
+        }
       }
     },
     screens: {
